@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
+    <h1>Hi folks</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <StaticImage
@@ -26,4 +26,11 @@ const IndexPage = () => (
   </Layout>
 )
 
-export default IndexPage
+const Home = () => (
+  <Layout>
+    <h1>Hello Gatsby!</h1>
+    <p>What a world</p>
+  </Layout>
+)
+
+export default Home
