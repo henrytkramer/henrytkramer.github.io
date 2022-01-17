@@ -1,0 +1,34 @@
+.navigation
+    display: flex
+    justify-content: space-between
+    padding: 2rem 0
+
+.nav-link
+    display: inline-block
+    font-size: 0.8rem
+
+    font-weight: 600
+    text-decoration: none
+    text-transform: uppercase
+
+    &.active, &:hover
+        text-decoration: underline
+
+.nav-icon
+    height: 1em
+    width: 1em
+
+.left, .right
+    display: inline-block
+
+.left 
+    margin-right: 2rem
+
+    .nav-link
+        text-decoration: none
+        font-weight: 700
+
+.right
+
+.right .nav-link:not(:last-child)
+    padding-right: 2em

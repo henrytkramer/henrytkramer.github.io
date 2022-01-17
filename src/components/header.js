@@ -2,6 +2,8 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
+// not used -- demonstration of proptypes
+
 const Header = ({ siteTitle }) => (
   <header
     style={{
@@ -30,6 +32,8 @@ const Header = ({ siteTitle }) => (
     </div>
   </header>
 )
+
+//Demonstration of proptypes
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

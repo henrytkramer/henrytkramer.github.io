@@ -1,0 +1,63 @@
+@use "../styles/variables" as colors
+
+html
+  font-size: min(max(1.2vw, 14px), 22px)
+  
+body
+  font-family: OpenSans, "DinPro", Helvetica Neue, sans-serif
+  color: colors.$text
+  font-weight: 500
+  line-height: 1.5
+  background-color: colors.$bg
+
+// Headings
+h1
+  font-size: 3.5rem
+  font-weight: 600
+
+h2
+  font-size: 2rem
+  font-weight: 600
+
+h3
+  font-size: 1.375rem
+  font-style: italic
+  font-weight: 700
+
+a
+  color: inherit
+  font-weight: inherit
+  text-decoration: underline
+
+  &:visited, &:active
+    color: inherit
+
+p
+  margin: 2em 0
+
+.index-heading
+  padding: 2rem 0
+  margin: 5rem auto
+  font-size: 1.5rem
+  max-width: 30em
+  font-weight: 600
+  
+// Content
+.content-container
+  margin: 5rem 0
+
+.hero
+  text-align: center
+  width: 100%
+  margin: 1.5rem auto
+
+section
+  margin: 5rem 0
+
+.two-flex
+  display: flex
+  
+  &> *:first-child
+    display: block
+    min-width: 25vw
+    padding-right: 5rem
