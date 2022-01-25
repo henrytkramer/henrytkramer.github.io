@@ -1,16 +1,32 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import MediaList from "../components/media-list"
+import MediaPlayer from "../components/media-player"
 
-const Media = () => (
+const MediaPage = ({data}) => (
     <Layout>
         <h1>Media</h1>
+
+        <div className="two-flex">
+            <MediaPlayer link={data.allVideosYaml.nodes[1].link} />
+            <MediaList videos={data.allVideosYaml.nodes}></MediaList>
+        </div>
     </Layout>
-    // <div style={{ color: `teal` }}>
-    //     <BigText text="Media ME Big Text"></BigText>
-    //     <p>Such wow. Very React.</p>
-    // </div>
 )
 
-export default Media
+// Gatsby takes one "query" export and passes it as {data} into page
+export const query = graphql`
+query {
+    allVideosYaml {
+        nodes {
+            composer
+            link
+            work
+        }
+    }
+}
+`
+
+export default MediaPage

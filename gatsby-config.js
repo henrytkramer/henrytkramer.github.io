@@ -15,6 +15,7 @@ module.exports = {
         path: `${__dirname}/src/images`, // image assets
       },
     },
+    `gatsby-transformer-yaml`, // yaml processing library
     {
       resolve: `gatsby-source-filesystem`, // repeat this for each "data source"
       options: {
