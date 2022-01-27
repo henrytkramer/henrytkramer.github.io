@@ -37,8 +37,8 @@ const IndexPage = () => (
           <h3>Voyage—</h3>
           <p>Taking you somewhere elegeic and temporal. A collaboration with cellist Christine Lee featuring works by Elliot Carter, Barber, and Ysaÿe.</p>
           <div>
-            <Button primary>Stream it on Spotify</Button>
-            <Button>See all albums</Button>
+            <Button primary link="https://open.spotify.com/album/3j3gbtGL6ZVHhATLk91nVD?si=2TUjW6n_TOu-6ttE3UZb1g">Stream it on Spotify</Button>
+            <Button link="https://open.spotify.com/artist/4xdZ9fYujKkuzxnNBfm8KW?si=Hz6ZRG_1RCqAfNtCZYEoMg">See all albums</Button>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@ const IndexPage = () => (
           <h3>Prokofiev Concerto No. 2—</h3>
           <p>Performed with the Belgian National Orchestra</p>
           <div>
-            <Button primary>Watch</Button>
+            <Button primary link="/media">Watch</Button>
           </div>
         </div>
       </div>

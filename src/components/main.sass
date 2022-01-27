@@ -41,10 +41,17 @@ p
   font-size: 1.5rem
   max-width: 30em
   font-weight: 600
-  
+
 // Content
 .content-container
   margin: 5rem 0
+
+.grid-container
+  margin: 1rem 0
+  display: grid
+  grid-template-columns: repeat(12, minmax(0, 1fr)) //minmax creates harder grid columns
+  grid-template-rows: 15vh 1fr 15vh
+  gap: 2rem
 
 .hero
   text-align: center
