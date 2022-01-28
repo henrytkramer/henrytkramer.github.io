@@ -38,5 +38,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-transition-link`
   ],
 }
