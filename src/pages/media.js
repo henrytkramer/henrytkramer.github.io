@@ -10,7 +10,7 @@ const MediaPage = ({data}) => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <Layout grid>
+        <Layout grid contentStyle={{ gridTemplateRows: `15vh 1fr 15vh` }}>
             <MediaPlayer video={data.allVideosYaml.nodes[activeIndex]} />
             <MediaList 
                 videos={data.allVideosYaml.nodes}

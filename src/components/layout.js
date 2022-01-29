@@ -13,7 +13,7 @@ import "./main.sass"
 import Nav from "./navigation"
 
 
-const Layout = ({ grid, children }) => {
+const Layout = ({ grid, children, contentStyle }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -35,7 +35,7 @@ const Layout = ({ grid, children }) => {
       >
         <Nav />
         
-        <main className={ grid ? `grid-container` : `content-container` }>
+        <main className={ grid ? `grid-container` : `content-container` } style={contentStyle}>
           {children}
         </main>
         
