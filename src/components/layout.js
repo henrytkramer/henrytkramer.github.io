@@ -13,7 +13,7 @@ import "./main.sass"
 import Nav from "./navigation"
 
 
-const Layout = ({ grid, children, contentStyle }) => {
+const Layout = ({ grid = false, children, contentStyle = null }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
