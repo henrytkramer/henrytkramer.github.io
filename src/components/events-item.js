@@ -16,7 +16,7 @@ const EventItem = ({event}) => {
                 {event.description}
             </div>
             <div className={eventStyles.actions}>
-                <Button>Details</Button>
+                {event.link && <Button link={event.link}>Details</Button>}
             </div>
         </div>
     )
