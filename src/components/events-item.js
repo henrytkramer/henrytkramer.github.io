@@ -2,6 +2,8 @@ import React from "react"
 import * as eventStyles from "./events.module.sass"
 import { Link } from "gatsby"
 import Button from "./button.js"
+import { motion, AnimatePresence } from "framer-motion"
+
 
 const EventItem = ({event}) => {
     return (

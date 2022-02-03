@@ -2,6 +2,7 @@
 import React, {useState} from "react"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { motion, AnimatePresence } from "framer-motion"
 
 import Layout from "../components/layout"
 import EventsItem from "../components/events-item"
@@ -23,7 +24,7 @@ const SchedulePage = ({data}) => {
 
   // State variable fo upcoming/past
   const [showing, setShowing] = useState(0);
-  const events = (showing === 0) ? upcomingEvents : pastEvents;
+  const events = (showing===0) ? upcomingEvents : pastEvents;
 
   if (data) {
     allEvents = data.allGoogleFormResponses1Sheet.nodes;
@@ -76,12 +77,34 @@ const SchedulePage = ({data}) => {
       />
       
       <div>
-        { events.map((event) => (
-          <EventsItem event={event} />
+        { events.map((event, i) => (
+          <motion.div 
+            custom={i}
+            initial="hidden"
+            animate="enter"
+            variants={variants}
+          >
+            <EventsItem event={event}/>
+          </motion.div>
         ))}
       </div>
+
     </Layout>
   )
+}
+
+const variants = {
+  enter: i => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+          delay: i * 0.08
+      }
+  }),
+  hidden: {
+      opacity: 0,
+      y: 50
+  }
 }
 
 export const query = graphql` 
