@@ -1,0 +1,32 @@
+@use "../styles/variables" as colors
+
+.row
+    padding: 0.8em 0
+    width: 100%
+
+    display: grid
+    grid-template-columns: repeat(10, minmax(0, 1fr)) //minmax creates harder grid columns
+    gap: 2rem
+    align-items: center
+    border-bottom: 1px solid black
+
+    &:first-child
+        border-top: 1px solid black
+
+.date
+    text-transform: uppercase
+    grid-column: 1 / span 1
+
+.location
+    font-size: 2rem
+    grid-column: auto / span 3
+
+.description
+    grid-column: auto / span 4
+
+.actions
+    grid-column: auto / span 2
+    align-self: end
+
+.nowrap
+    white-space: nowrap
