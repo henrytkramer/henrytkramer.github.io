@@ -2,17 +2,24 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { MotionConfig } from "framer-motion"
 
 import Button from "../components/button"
 import Layout from "../components/layout"
+import AniText from "../components/ani-text"
 import SEO from "../components/seo"
 
 // Define your component
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div className="hero">
+    {/* <div className="hero">
       <StaticImage src="../images/big-title.svg" alt="Henry Kramer"/>
+    </div> */}
+
+    <div style={ {fontSize: `10em`, lineHeight: 0.8, overflow: `hidden`} }>
+      <AniText text="HENRY" />
+      <AniText text="KRAMER" delay={0.5}/>
     </div>
 
     <div className="hero">

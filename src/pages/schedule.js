@@ -1,5 +1,5 @@
 //Import React
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { motion, AnimatePresence } from "framer-motion"
@@ -9,22 +9,11 @@ import EventsItem from "../components/events-item"
 import SEO from "../components/seo"
 import BigSwitch from "../components/big-switch"
 
-/*
-  Schema for an event
-  Datetime start/end (+time zone)
-  Location
-  Name of performance
-  Description (txt)
-*/
-const SchedulePage = ({data}) => {
+const formatEventData = function (data) {
   // Arrays of events
   let allEvents = [];
   let upcomingEvents = [];
   let pastEvents = [];
-
-  // State variable fo upcoming/past
-  const [showing, setShowing] = useState(0);
-  const events = (showing===0) ? upcomingEvents : pastEvents;
 
   if (data) {
     allEvents = data.allGoogleFormResponses1Sheet.nodes;
@@ -40,7 +29,7 @@ const SchedulePage = ({data}) => {
       // Created a formatted time for cal
       // Documentation here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
       const date = new Date(event.date);
-      event.date = date; //event.date is an object so we can compare
+      event.date = date; //event.date is an object so we can use in compare functions
 
       const dateFormatStr = (date.getFullYear() == currentYear) ? dateFormat : dateFormatWithYear;
       event.dateFormatted = date.toLocaleDateString([], dateFormatStr);
@@ -66,6 +55,23 @@ const SchedulePage = ({data}) => {
   upcomingEvents.sort((a, b) => a.date - b.date); // Ascending
   pastEvents.sort((a, b) => b.date - a.date); // Descending
 
+  return [upcomingEvents, pastEvents];
+}
+
+/*
+  Schema for an event
+  Datetime start/end (+time zone)
+  Location
+  Name of performance
+  Description (txt)
+*/
+const SchedulePage = ({data}) => {
+  const [upcomingEvents, pastEvents] = formatEventData(data);
+
+  // State variable fo upcoming/past
+  const [showing, setShowing] = useState(0);
+  const events = (showing===0) ? upcomingEvents : pastEvents;
+
   return (
     <Layout>
       <SEO title="Upcoming concerts schedule" />
@@ -78,33 +84,14 @@ const SchedulePage = ({data}) => {
       
       <div>
         { events.map((event, i) => (
-          <motion.div 
-            custom={i}
-            initial="hidden"
-            animate="enter"
-            variants={variants}
-          >
-            <EventsItem event={event}/>
-          </motion.div>
+          <AnimatePresence exitBeforeEnter>
+              <EventsItem event={event} i={i}/>
+          </AnimatePresence>
         ))}
       </div>
 
     </Layout>
   )
-}
-
-const variants = {
-  enter: i => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-          delay: i * 0.08
-      }
-  }),
-  hidden: {
-      opacity: 0,
-      y: 50
-  }
 }
 
 export const query = graphql` 
