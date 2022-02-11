@@ -16,7 +16,7 @@ const formatEventData = function (data) {
   let pastEvents = [];
 
   if (data) {
-    allEvents = data.allGoogleFormResponses1Sheet.nodes;
+    allEvents = data.allGoogleScheduleSheet.nodes;
     const timeFormat = {timeStyle: 'short', hour12: true}; // 3:30 AM
     const dateFormat = {month: 'short', day: 'numeric'}; // Jan 30
     const dateFormatWithYear = {month: 'short', day: 'numeric', year: 'numeric'}; // Jan 30 2012
@@ -95,15 +95,16 @@ const SchedulePage = ({data}) => {
 }
 
 export const query = graphql` 
-  query {
-    allGoogleFormResponses1Sheet {
+  query MyQuery {
+    allGoogleScheduleSheet {
       nodes {
         date
-        location
-        title
         description
-        start
         endDate
+        location
+        start
+        timestamp
+        title
       }
     }
   }
