@@ -6,27 +6,39 @@ const AniText = ({text = "", variants = {}, containerVariants = {}, delay = 0, .
     if (!Object.keys(containerVariants).length) containerVariants = DEFAULT_CONTAINER;
 
     return (
-        <motion.div 
-            key={text}
-            custom={delay}
-            variants={containerVariants}
-            initial="initial"
-            animate="animate"
-            style={{overflow: `hidden`, position: `relative`}}
-            {...rest}>
-            {[...text].map( (letter, i) =>  (
-                <motion.span
-                    style={{display: `inline-block`}}
-                    custom={0.1 * i + delay}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    variants={variants}
-                >
-                    {letter}
-                </motion.span>
-            ))}
-        </motion.div>
+        // <motion.div 
+        //     key={text}
+        //     custom={delay}
+        //     variants={containerVariants}
+        //     initial="initial"
+        //     animate="animate"
+        //     style={{overflow: `hidden`, position: `relative`}}
+        //     {...rest}>
+        //     {[...text].map( (letter, i) =>  (
+        //         <motion.span
+        //             style={{display: `inline-block`}}
+        //             custom={0.1 * i + delay}
+        //             initial="initial"
+        //             animate="animate"
+        //             exit="exit"
+        //             variants={variants}
+        //         >
+        //             {letter}
+        //         </motion.span>
+        //     ))}
+        // </motion.div>
+        <div style={{overflow: "hidden"}} {...rest}>
+            <motion.div 
+                key={text}
+                custom={delay}
+                variants={variants}
+                initial="initial"
+                animate="animate"
+            >
+                {text}
+            </motion.div>
+        </div>
+
     )
 }
 
@@ -37,7 +49,7 @@ const DEFAULT_CONTAINER = {
     animate: i => ({
         opacity: 1,
         transition: {
-            duration: .4,
+            duration: 1.2,
             delay: i
         }
     }),
@@ -45,17 +57,35 @@ const DEFAULT_CONTAINER = {
 }
 
 const DEFAULT_VARIANTS = {
-    animate: i => ({
+    animate: delay => ({
         y: 0,
+        opacity: 1,
         transition: {
-            type: "spring",
-            delay: i,
-            duration: .8,
+            delay: delay,
+            y: {type: "easeOut", duration: .8},
+            default: { duration: .8},
         }
     }),
     initial: {
-        y: 300
+        opacity: 0,
+        y: 80
     }
 }
+
+
+// For letter swiping
+// const DEFAULT_VARIANTS = {
+//     animate: i => ({
+//         y: 0,
+//         transition: {
+//             type: "spring",
+//             delay: i,
+//             duration: .8,
+//         }
+//     }),
+//     initial: {
+//         y: 300
+//     }
+// }
 
 export default AniText

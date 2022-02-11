@@ -19,7 +19,7 @@ const IndexPage = () => (
 
     <div style={ {fontSize: `10em`, lineHeight: 0.8, overflow: `hidden`} }>
       <AniText text="HENRY" />
-      <AniText text="KRAMER" delay={0.5}/>
+      <AniText text="KRAMER" delay={0.2}/>
     </div>
 
     <div className="hero">
@@ -30,22 +30,25 @@ const IndexPage = () => (
       />
     </div>
 
-    <p className="index-heading">
-      Henry Kramer is an <Link>award-winning musician</Link> who combines stylish programming with insightful and exuberant interpretations.
-    </p>
+    <h2 className="index-heading">
+      <Link>Award-winning musician</Link> who combines stylish programming with insightful and exuberant interpretations.
+    </h2>
 
     <section>
       <h2>Albums</h2>
       <div className="two-flex">
         <div>
-          <StaticImage />
+          <StaticImage 
+            src="../images/voyage_album.jpeg"
+            alt="Voyage album cover"
+          />
         </div>
         <div>
           <h3>Voyage—</h3>
           <p>Taking you somewhere elegeic and temporal. A collaboration with cellist Christine Lee featuring works by Elliot Carter, Barber, and Ysaÿe.</p>
           <div>
-            <Button primary link="https://open.spotify.com/album/3j3gbtGL6ZVHhATLk91nVD?si=2TUjW6n_TOu-6ttE3UZb1g">Stream it on Spotify</Button>
-            <Button link="https://open.spotify.com/artist/4xdZ9fYujKkuzxnNBfm8KW?si=Hz6ZRG_1RCqAfNtCZYEoMg">See all albums</Button>
+            <Button primary target="_blank" link="https://open.spotify.com/album/3j3gbtGL6ZVHhATLk91nVD?si=2TUjW6n_TOu-6ttE3UZb1g">Stream it on Spotify</Button>
+            <Button target="_blank" link="https://open.spotify.com/artist/4xdZ9fYujKkuzxnNBfm8KW?si=Hz6ZRG_1RCqAfNtCZYEoMg">See all albums</Button>
           </div>
         </div>
       </div>
