@@ -5,13 +5,14 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Henry Kramer Piano`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Website of Henry Kramer, award-winning American pianist`,
     author: `Wending Lu`,
   },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`, // manages changes to document head
     `gatsby-plugin-gatsby-cloud`,
+    'gatsby-plugin-breakpoints',
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-image`, // maintains multiple responsive image sizes, lazy load

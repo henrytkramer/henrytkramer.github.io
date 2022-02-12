@@ -33,45 +33,51 @@ const IndexPage = ({data}) => (
       />
     </div>
 
-    <h2 className="index-heading" data-sal="slide-up">
-      <Link>Award-winning musician</Link> who combines stylish programming with insightful and exuberant interpretations.
-    </h2>
+    <AniBlock>
+      <h2 className="index-heading">
+        <Link>Award-winning musician</Link> who combines stylish programming with insightful and exuberant interpretations.
+      </h2>
+    </AniBlock>
 
-    <section data-sal="slide-up">
-      <h2>Albums</h2>
-      <div className="two-flex">
-        <div>
-          <StaticImage 
-            src="../images/voyage_album.jpeg"
-            alt="Voyage album cover"
-          />
-        </div>
-        <div>
-          <h3>Voyage—</h3>
-          <p>Taking you somewhere elegeic and temporal. A collaboration with cellist Christine Lee featuring works by Elliot Carter, Barber, and Ysaÿe.</p>
+    <AniBlock>
+      <section>
+        <h2>Albums</h2>
+        <div className="two-flex">
           <div>
-            <Button primary target="_blank" link="https://open.spotify.com/album/3j3gbtGL6ZVHhATLk91nVD?si=2TUjW6n_TOu-6ttE3UZb1g">Stream it on Spotify</Button>
-            <Button target="_blank" link="https://open.spotify.com/artist/4xdZ9fYujKkuzxnNBfm8KW?si=Hz6ZRG_1RCqAfNtCZYEoMg">See all albums</Button>
+            <StaticImage 
+              src="../images/voyage_album.jpeg"
+              alt="Voyage album cover"
+            />
+          </div>
+          <div>
+            <h3>Voyage—</h3>
+            <p>Taking you somewhere elegeic and temporal. A collaboration with cellist Christine Lee featuring works by Elliot Carter, Barber, and Ysaÿe.</p>
+            <div>
+              <Button primary target="_blank" link="https://open.spotify.com/album/3j3gbtGL6ZVHhATLk91nVD?si=2TUjW6n_TOu-6ttE3UZb1g">Stream it on Spotify</Button>
+              <Button target="_blank" link="https://open.spotify.com/artist/4xdZ9fYujKkuzxnNBfm8KW?si=Hz6ZRG_1RCqAfNtCZYEoMg">See all albums</Button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </AniBlock>
 
-    <section data-sal="slide-up">
-      <h2>Videos</h2>
-      <div className="two-flex">
-        <div></div> {/* Video preview */}
-        <div>
-          <h3>Prokofiev Concerto No. 2—</h3>
-          <p>Performed with the Belgian National Orchestra</p>
+    <AniBlock>
+      <section>
+        <h2>Videos</h2>
+        <div className="two-flex">
+          <div></div> {/* Video preview */}
           <div>
-            <Button primary link="/media">Watch</Button>
+            <h3>Prokofiev Concerto No. 2—</h3>
+            <p>Performed with the Belgian National Orchestra</p>
+            <div>
+              <Button primary link="/media">Watch</Button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </AniBlock>
 
-    <section data-sal="slide-up">
+    <section>
       <div className="two-flex">
         <h2>Upcoming Performances</h2>
         <Button link="/schedule">See all</Button>
