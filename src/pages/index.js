@@ -7,6 +7,7 @@ import { MotionConfig } from "framer-motion"
 import Button from "../components/button"
 import Layout from "../components/layout"
 import AniText from "../components/ani-text"
+import AniBlock from "../components/ani-block"
 import SEO from "../components/seo"
 import EventsTable from "../components/events-table"
 import LinkWrap from "../components/link-wrap"
@@ -32,9 +33,11 @@ const IndexPage = ({data}) => (
       />
     </div>
 
-    <h2 className="index-heading">
-      <Link>Award-winning musician</Link> who combines stylish programming with insightful and exuberant interpretations.
-    </h2>
+    <AniBlock>
+      <h2 className="index-heading">
+        <Link>Award-winning musician</Link> who combines stylish programming with insightful and exuberant interpretations.
+      </h2>
+    </AniBlock>
 
     <section>
       <h2>Albums</h2>
@@ -71,9 +74,11 @@ const IndexPage = ({data}) => (
     </section>
 
     <section>
-      <h2>Upcoming Performances</h2>
+      <div className="two-flex">
+        <h2>Upcoming Performances</h2>
+        <Button link="/schedule">See all</Button>
+      </div>
       <EventsTable data={data} limit={3}/>
-      <LinkWrap to="/schedule">See all</LinkWrap>
     </section>
 
   </Layout>

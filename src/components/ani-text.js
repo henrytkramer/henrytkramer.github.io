@@ -6,6 +6,7 @@ const AniText = ({text = "", variants = {}, containerVariants = {}, delay = 0, .
     if (!Object.keys(containerVariants).length) containerVariants = DEFAULT_CONTAINER;
 
     return (
+        // Letter scroll effect
         // <motion.div 
         //     key={text}
         //     custom={delay}
@@ -27,6 +28,7 @@ const AniText = ({text = "", variants = {}, containerVariants = {}, delay = 0, .
         //         </motion.span>
         //     ))}
         // </motion.div>
+
         <div style={{overflow: "hidden"}} {...rest}>
             <motion.div 
                 key={text}
@@ -68,7 +70,7 @@ const DEFAULT_VARIANTS = {
     }),
     initial: {
         opacity: 0,
-        y: 80
+        y: ".8em"
     }
 }
 
