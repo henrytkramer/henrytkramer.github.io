@@ -18,7 +18,7 @@ import EventsTable from "../components/events-table"
   Description (txt)
 */
 const SchedulePage = ({data}) => {
-  // State variable fo upcoming/past
+  // State variable for upcoming/past
   const [showing, setShowing] = useState(0);
 
   return (
@@ -31,10 +31,26 @@ const SchedulePage = ({data}) => {
         setActiveIndex={setShowing}
       />
       
-      <EventsTable showing={showing} />
+      <EventsTable showing={showing} data={data} />
 
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    allGoogleScheduleSheet {
+      nodes {
+        date
+        description
+        endDate
+        location
+        start
+        timestamp
+        title
+      }
+    }
+  }
+`
 
 export default SchedulePage

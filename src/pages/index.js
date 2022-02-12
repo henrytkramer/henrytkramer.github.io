@@ -1,6 +1,6 @@
 //Import React
 import * as React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { MotionConfig } from "framer-motion"
 
@@ -8,9 +8,11 @@ import Button from "../components/button"
 import Layout from "../components/layout"
 import AniText from "../components/ani-text"
 import SEO from "../components/seo"
+import EventsTable from "../components/events-table"
+import LinkWrap from "../components/link-wrap"
 
 // Define your component
-const IndexPage = () => (
+const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
     {/* <div className="hero">
@@ -70,17 +72,28 @@ const IndexPage = () => (
 
     <section>
       <h2>Upcoming Performances</h2>
+      <EventsTable data={data} limit={3}/>
+      <LinkWrap to="/schedule">See all</LinkWrap>
     </section>
 
   </Layout>
 )
 
-const Home = () => (
-  <Layout>
-    <h1>Hello Gatsby!</h1>
-    <p>What a world</p>
-  </Layout>
-)
+export const query = graphql`
+  query {
+    allGoogleScheduleSheet {
+      nodes {
+        date
+        description
+        endDate
+        location
+        start
+        timestamp
+        title
+      }
+    }
+  }
+`
 
 // Export component
 export default IndexPage

@@ -5,29 +5,13 @@ import EventsItem from "./events-item"
 
 // var showing
 // 0 = upcoming events, 1 = past events
-const EventsTable = ({showing = 0}) => {
-  const data = useStaticQuery(graphql`
-    query {
-      allGoogleScheduleSheet {
-        nodes {
-          date
-          description
-          endDate
-          location
-          start
-          timestamp
-          title
-        }
-      }
-    }
-  `);
-
+const EventsTable = ({ data={}, showing=0, limit=99 }) => {
   const [upcomingEvents, pastEvents] = getEventData(data);
   const events = (showing===0) ? upcomingEvents : pastEvents;
 
   return (
     <div>
-      { events.map((event, i) => (
+      { events.slice(0, limit).map((event, i) => (
         <AnimatePresence exitBeforeEnter>
             <EventsItem event={event} i={i}/>
         </AnimatePresence>
