@@ -33,13 +33,11 @@ const IndexPage = ({data}) => (
       />
     </div>
 
-    <AniBlock>
-      <h2 className="index-heading">
-        <Link>Award-winning musician</Link> who combines stylish programming with insightful and exuberant interpretations.
-      </h2>
-    </AniBlock>
+    <h2 className="index-heading" data-sal="slide-up">
+      <Link>Award-winning musician</Link> who combines stylish programming with insightful and exuberant interpretations.
+    </h2>
 
-    <section>
+    <section data-sal="slide-up">
       <h2>Albums</h2>
       <div className="two-flex">
         <div>
@@ -59,7 +57,7 @@ const IndexPage = ({data}) => (
       </div>
     </section>
 
-    <section>
+    <section data-sal="slide-up">
       <h2>Videos</h2>
       <div className="two-flex">
         <div></div> {/* Video preview */}
@@ -73,7 +71,7 @@ const IndexPage = ({data}) => (
       </div>
     </section>
 
-    <section>
+    <section data-sal="slide-up">
       <div className="two-flex">
         <h2>Upcoming Performances</h2>
         <Button link="/schedule">See all</Button>
