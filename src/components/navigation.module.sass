@@ -1,3 +1,5 @@
+@use "../styles/mixins" as mixins
+
 .navigation
     position: sticky
     display: flex
@@ -32,7 +34,19 @@
         text-decoration: none
         font-weight: 700
 
-.right
-
 .right .nav-link:not(:last-child)
     padding-right: 2em
+
+.open-menu
+    display: none
+
+    @include mixins.mobile
+        display: block
+        position: fixed
+        background: white
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 9
+
