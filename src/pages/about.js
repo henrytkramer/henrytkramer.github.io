@@ -1,15 +1,26 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import PlaceholderImage from "../components/placeholder-image.js"
+import SEO from "../components/seo"
 import Paragraph from "../components/paragraph.js"
+import AniBlock from "../components/ani-block.js"
 
 const About = () => (
     <Layout>
-        <h1 style={{gridColumn: `1 / -1`}}>About</h1>
-        <PlaceholderImage />
+        <SEO title="Biography" />
+
+        <h1>Biography</h1>
+        <AniBlock style={{maxWidth:"42em"}}>
+            <StaticImage
+                src="../images/blue-portrait--wide.jpg"
+                alt="Portrait of Henry Kramer in front of a piano"
+                style={{maxWidth: "120vh", height: "auto", width: "auto"}}
+            />
+        </AniBlock>
         <Paragraph>
+            <h3>Henry Kramer</h3>
             <>
                 Praised by The Cleveland Classical Review for his “astonishingly confident technique” and The New York Times for “thrilling [and] triumphant” performances, pianist Henry Kramer is developing a reputation as a musician of rare sensitivity who combines stylish programming with insightful and exuberant interpretations.  In 2016, he garnered international recognition with a Second Prize win in the Queen Elisabeth Competition in Brussels. Most recently, he was awarded a 2019 Avery Fisher Career Grant by Lincoln Center – one of the most coveted honors bestowed on young American soloists.
             </>
@@ -23,7 +34,11 @@ const About = () => (
                 Kramer has performed “stunning” solo recital debuts, most notably at Alice Tully Hall as the recipient of the Juilliard School’s William Petschek Award, as well as at Amsterdam’s Concertgebouw.  At his Philadelphia debut, Peter Dobrin of The Philadelphia Inquirer remarked, “the 31-year-old pianist personalized interpretations to such a degree that works emerged anew. He is a big personality.”
             </>
         </Paragraph>
-        <PlaceholderImage />
+        <StaticImage
+            src="../images/blue-portrait-tall.jpg"
+            alt="Portrait of Henry Kramer in front of a piano"
+            style={{maxHeight: "85vh", maxWidth: "85vh", height: "auto", width: "auto"}}
+        />
         <Paragraph>
             <>
                 A versatile performer, Kramer has soloed in concertos with the Bilkent Symphony Orchestra, Belgian National Orchestra, Shanghai Philharmonic Orchestra, Indianapolis Symphony and the Calgary Philharmonic Orchestra, among many others, collaborating with conductors such as Marin Alsop, Gerard Schwarz, Stéphane Denève, Jan Pascal Tortelier and Hans Graf. Throughout the pandemic, Henry appeared on multiple digital concert programs including a livestream on the ViolinChannel, at the Rockport Music Festival, Walla Walla Chamber Music Festival, Portland Chamber Music Festival in addition to a live performance of Schumann's Piano Concerto with the Columbus (Georgia) Symphony Orchestra.  As concerts return, Henry will make appearances in the 2021-22 season at BravoPiano! festival in Hilton Head where he will premiere a work he commissioned by composer Hannah Lash, Rachmaninoff 3rd Concerto with the Hartford Symphony, and chamber music with Camerata Pacifica. 

@@ -50,7 +50,6 @@ module.exports = {
       options: {
         spreadsheetId: process.env.SPREADSHEET_ID,
         apiKey: process.env.GOOGLE_API_KEY,
-        // credentials: require('./secret.json')
       }
     },
   ],

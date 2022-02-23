@@ -45,7 +45,7 @@ const IndexPage = ({data}) => (
         <div className="two-flex">
           <div>
             <StaticImage 
-              src="../images/voyage_album.jpeg"
+              src="../images/voyage_album.jpg"
               alt="Voyage album cover"
             />
           </div>

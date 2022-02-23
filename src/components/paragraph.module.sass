@@ -1,8 +1,14 @@
+@use "../styles/mixins" as mixins
+
 .paragraph
     max-width: 42em
     text-align: justify
-    margin-left: auto
+    margin-left: 20vw
     margin-right: auto
+
+    @include mixins.mobile
+        margin-left: auto
+        margin-right: auto
 
 .left-col
     grid-column: 5 / 9
