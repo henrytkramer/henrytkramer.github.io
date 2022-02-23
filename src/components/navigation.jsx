@@ -18,7 +18,7 @@ const Nav = (props) => {
             </div>
 
             { breakpoints.sm ? 
-                <div onClick={() => setExpanded(!expanded)}>MENU</div>
+                <div className={navStyles.menuIcon} onClick={() => setExpanded(!expanded)}></div>
                 :
                 <div className={navStyles.right}>
                     <LinkWrap to="/about" className={navStyles.navLink} activeClassName={navStyles.active}>About</LinkWrap>
@@ -40,31 +40,31 @@ const Nav = (props) => {
 
         { (expanded) &&
             <div className={navStyles.openMenu}>
-                <div onClick={() => setExpanded(!expanded)}>MENU</div>
+                <div className={navStyles.menuIcon} onClick={() => setExpanded(!expanded)}></div>
                 <ul>
-                <li>
-                    <LinkWrap to="/about" className={navStyles.navLink} activeClassName={navStyles.active}>About</LinkWrap>
-                </li>
-                <li>
-                    <LinkWrap to="/schedule" className={navStyles.navLink} activeClassName={navStyles.active}>Schedule</LinkWrap>
-                </li>
-                <li>
-                    <LinkWrap to="/media" className={navStyles.navLink} activeClassName={navStyles.active}>Media</LinkWrap>
-                </li>
-                <li>
-                    <LinkWrap to="/contact" className={navStyles.navLink} activeClassName={navStyles.active}>Contact</LinkWrap>
-                </li>
-                <li>
-                    <a className={navStyles.navIcon, navStyles.navLink} href="https://www.instagram.com/henrykramerpiano/">
-                        <FaInstagram />
-                    </a>
-                    <a className={navStyles.navIcon, navStyles.navLink} href="https://www.facebook.com/henrykramerpiano/">
-                        <FaFacebookF />
-                    </a>
-                    <a className={navStyles.navIcon, navStyles.navLink} href="https://www.youtube.com/henrykramerpiano">
-                        <FaYoutube />
-                    </a>
-                </li>
+                    <li>
+                        <LinkWrap to="/about" className={navStyles.navLink} activeClassName={navStyles.active}>About</LinkWrap>
+                    </li>
+                    <li>
+                        <LinkWrap to="/schedule" className={navStyles.navLink} activeClassName={navStyles.active}>Schedule</LinkWrap>
+                    </li>
+                    <li>
+                        <LinkWrap to="/media" className={navStyles.navLink} activeClassName={navStyles.active}>Media</LinkWrap>
+                    </li>
+                    <li>
+                        <LinkWrap to="/contact" className={navStyles.navLink} activeClassName={navStyles.active}>Contact</LinkWrap>
+                    </li>
+                    <li>
+                        <a className={navStyles.navIcon, navStyles.navLink} href="https://www.instagram.com/henrykramerpiano/">
+                            <FaInstagram />
+                        </a>
+                        <a className={navStyles.navIcon, navStyles.navLink} href="https://www.facebook.com/henrykramerpiano/">
+                            <FaFacebookF />
+                        </a>
+                        <a className={navStyles.navIcon, navStyles.navLink} href="https://www.youtube.com/henrykramerpiano">
+                            <FaYoutube />
+                        </a>
+                    </li>
                 </ul>
             </div>
         }

@@ -1,11 +1,13 @@
 @use "../styles/mixins" as mixins
+@use "../styles/variables" as colors
+$line-width: 0.18em
 
 .navigation
     position: sticky
     display: flex
     justify-content: space-between
     align-items: center
-    height: 10vh
+    height: 4em
 
 .nav-link
     display: inline-block
@@ -43,10 +45,48 @@
     @include mixins.mobile
         display: block
         position: fixed
-        background: white
+        background: colors.$bg
+        padding-right: 1em
         top: 0
         left: 0
         right: 0
         bottom: 0
         z-index: 9
+    
+    li
+        list-style-type: none
+        margin: 1.5em
+    
+    .nav-link
+        font-size: 1.5em
+    
+    .nav-icon
+        margin: 0 1em
+    
+    .menu-icon
+        right: 2.1vw // Match with body container padd
+        
+        &:before
+            margin-bottom: 0
+            transform: rotate(45deg) translateY(0.5 * $line-width)
+        &:after
+            margin-bottom: 0
+            transform: rotate(-45deg) translateY(-0.5 * $line-width)
 
+.menu-icon
+    position: absolute
+    top: 1.5em
+    right: 0
+    color: blue
+
+    &:before, &:after
+        content: ''
+        display: block
+        height: $line-width
+        width: 2em
+        background-size: 100%
+        background-color: colors.$text
+        margin-bottom: .5em
+
+    &:hover
+        cursor: pointer
