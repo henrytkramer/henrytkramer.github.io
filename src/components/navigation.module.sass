@@ -36,6 +36,10 @@ $line-width: 0.18em
         text-decoration: none
         font-weight: 700
 
+.right
+    @include mixins.mobile
+        display: none
+
 .right .nav-link:not(:last-child)
     padding-right: 2em
 
@@ -76,8 +80,9 @@ $line-width: 0.18em
 .menu-icon
     position: absolute
     top: 1.5em
-    right: 0
+    right: 2.1vw
     color: blue
+    z-index: 99
 
     &:before, &:after
         content: ''
@@ -87,6 +92,18 @@ $line-width: 0.18em
         background-size: 100%
         background-color: colors.$text
         margin-bottom: .5em
+        transition: transform 0.3s
 
     &:hover
         cursor: pointer
+    
+    &.expanded
+        &:before
+            margin-bottom: 0
+            transform: rotate(45deg) translateY(0.5 * $line-width)
+        &:after
+            margin-bottom: 0
+            transform: rotate(-45deg) translateY(-0.5 * $line-width)
+
+    @include mixins.desktop
+        display: none

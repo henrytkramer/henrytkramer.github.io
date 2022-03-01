@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa"
+import { motion } from "framer-motion"
 
 import LinkWrap from "./link-wrap"
 import * as navStyles from "./navigation.module.sass"
@@ -17,31 +18,34 @@ const Nav = (props) => {
                 <LinkWrap to="/" className={navStyles.navLink} activeClassName={navStyles.active}>Henry Kramer</LinkWrap>
             </div>
 
-            { breakpoints.sm ? 
-                <div className={navStyles.menuIcon} onClick={() => setExpanded(!expanded)}></div>
-                :
-                <div className={navStyles.right}>
-                    <LinkWrap to="/about" className={navStyles.navLink} activeClassName={navStyles.active}>About</LinkWrap>
-                    <LinkWrap to="/schedule" className={navStyles.navLink} activeClassName={navStyles.active}>Schedule</LinkWrap>
-                    <LinkWrap to="/media" className={navStyles.navLink} activeClassName={navStyles.active}>Media</LinkWrap>
-                    <LinkWrap to="/contact" className={navStyles.navLink} activeClassName={navStyles.active}>Contact</LinkWrap>
-                    <a className={navStyles.navIcon, navStyles.navLink} href="https://www.instagram.com/henrykramerpiano/">
-                        <FaInstagram />
-                    </a>
-                    <a className={navStyles.navIcon, navStyles.navLink} href="https://www.facebook.com/henrykramerpiano/">
-                        <FaFacebookF />
-                    </a>
-                    <a className={navStyles.navIcon, navStyles.navLink} href="https://www.youtube.com/henrykramerpiano">
-                        <FaYoutube />
-                    </a>
-                </div>
-            }
+            {/* Only shows on desktop */}
+            <div className={navStyles.right}>
+                <LinkWrap to="/about" className={navStyles.navLink} activeClassName={navStyles.active}>About</LinkWrap>
+                <LinkWrap to="/schedule" className={navStyles.navLink} activeClassName={navStyles.active}>Schedule</LinkWrap>
+                <LinkWrap to="/media" className={navStyles.navLink} activeClassName={navStyles.active}>Media</LinkWrap>
+                <LinkWrap to="/contact" className={navStyles.navLink} activeClassName={navStyles.active}>Contact</LinkWrap>
+                <a className={navStyles.navIcon, navStyles.navLink} href="https://www.instagram.com/henrykramerpiano/">
+                    <FaInstagram />
+                </a>
+                <a className={navStyles.navIcon, navStyles.navLink} href="https://www.facebook.com/henrykramerpiano/">
+                    <FaFacebookF />
+                </a>
+                <a className={navStyles.navIcon, navStyles.navLink} href="https://www.youtube.com/henrykramerpiano">
+                    <FaYoutube />
+                </a>
+            </div>
         </div>
 
+        {/* Mobile Menu */}
+        <div className={`${navStyles.menuIcon} ${expanded ? navStyles.expanded : ""}`} onClick={() => setExpanded(!expanded)}></div>
         { (expanded) &&
-            <div className={navStyles.openMenu}>
-                <div className={navStyles.menuIcon} onClick={() => setExpanded(!expanded)}></div>
-                <ul>
+            <motion.div 
+                className={navStyles.openMenu}
+                variants={MENU_CONTAINER}
+                initial="hidden"
+                animate="enter"
+            >
+                <motion.ul variants={MENU_MOTION} initial="hidden" animate="enter">
                     <li>
                         <LinkWrap to="/about" className={navStyles.navLink} activeClassName={navStyles.active}>About</LinkWrap>
                     </li>
@@ -65,11 +69,41 @@ const Nav = (props) => {
                             <FaYoutube />
                         </a>
                     </li>
-                </ul>
-            </div>
+                </motion.ul>
+            </motion.div>
         }
         </>
     )
+}
+
+const MENU_CONTAINER = {
+    enter: {
+        opacity: 1,
+        transition: {
+            type: "easeOutCubic", 
+            duration: 0.4 
+        }
+    },
+
+    hidden: {
+        opacity: 0,
+    }
+} 
+
+const MENU_MOTION = {
+    enter: {
+        scale: 1,
+        translateY: 0,
+        transition: {
+            type: "easeOutCubic", 
+            duration: 0.3
+        }
+    },
+
+    hidden: {
+        scale: 1.2,
+        translateY: 20
+    }
 }
 
 export default Nav

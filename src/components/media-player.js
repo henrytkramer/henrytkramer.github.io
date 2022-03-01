@@ -24,7 +24,7 @@ const MediaPlayer = ({video}) => (
                     scaleX: 1,
                     transition: {
                         opacity: {duration: 1},
-                        default:{duration: 0.5}
+                        default: {duration: 0.5}
                     }
                 }}
                 exit={{ opacity: 0, scaleX: 1.05 }}
