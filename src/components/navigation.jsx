@@ -1,14 +1,11 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
-import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa"
 import { motion } from "framer-motion"
 
 import LinkWrap from "./link-wrap"
 import * as navStyles from "./navigation.module.sass"
 
-const Nav = (props) => {
-    const breakpoints = useBreakpoint();
+const Nav = () => {
     const [expanded, setExpanded] = useState(false);
 
     return (
@@ -24,13 +21,13 @@ const Nav = (props) => {
                 <LinkWrap to="/schedule" className={navStyles.navLink} activeClassName={navStyles.active}>Schedule</LinkWrap>
                 <LinkWrap to="/media" className={navStyles.navLink} activeClassName={navStyles.active}>Media</LinkWrap>
                 <LinkWrap to="/contact" className={navStyles.navLink} activeClassName={navStyles.active}>Contact</LinkWrap>
-                <a className={navStyles.navIcon, navStyles.navLink} href="https://www.instagram.com/henrykramerpiano/">
+                <a className={`${navStyles.navIcon} ${navStyles.navLink}`} href="https://www.instagram.com/henrykramerpiano/">
                     <FaInstagram />
                 </a>
-                <a className={navStyles.navIcon, navStyles.navLink} href="https://www.facebook.com/henrykramerpiano/">
+                <a className={`${navStyles.navIcon} ${navStyles.navLink}`} href="https://www.facebook.com/henrykramerpiano/">
                     <FaFacebookF />
                 </a>
-                <a className={navStyles.navIcon, navStyles.navLink} href="https://www.youtube.com/henrykramerpiano">
+                <a className={`${navStyles.navIcon} ${navStyles.navLink}`} href="https://www.youtube.com/henrykramerpiano">
                     <FaYoutube />
                 </a>
             </div>
@@ -59,13 +56,13 @@ const Nav = (props) => {
                         <LinkWrap to="/contact" className={navStyles.navLink} activeClassName={navStyles.active}>Contact</LinkWrap>
                     </li>
                     <li>
-                        <a className={navStyles.navIcon, navStyles.navLink} href="https://www.instagram.com/henrykramerpiano/">
+                        <a className={`${navStyles.navIcon} ${navStyles.navLink}`} href="https://www.instagram.com/henrykramerpiano/">
                             <FaInstagram />
                         </a>
-                        <a className={navStyles.navIcon, navStyles.navLink} href="https://www.facebook.com/henrykramerpiano/">
+                        <a className={`${navStyles.navIcon} ${navStyles.navLink}`} href="https://www.facebook.com/henrykramerpiano/">
                             <FaFacebookF />
                         </a>
-                        <a className={navStyles.navIcon, navStyles.navLink} href="https://www.youtube.com/henrykramerpiano">
+                        <a className={`${navStyles.navIcon} ${navStyles.navLink}`} href="https://www.youtube.com/henrykramerpiano">
                             <FaYoutube />
                         </a>
                     </li>

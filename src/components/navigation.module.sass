@@ -1,6 +1,6 @@
 @use "../styles/mixins" as mixins
 @use "../styles/variables" as colors
-$line-width: 0.18em
+$line-width: 2px
 
 .navigation
     position: sticky
@@ -11,7 +11,7 @@ $line-width: 0.18em
 
 .nav-link
     display: inline-block
-    font-size: 0.8rem
+    font-size: 1rem
 
     font-weight: 600
     text-decoration: none
@@ -57,28 +57,23 @@ $line-width: 0.18em
         bottom: 0
         z-index: 9
     
+    ul
+        margin-top: 5em
+
     li
         list-style-type: none
         margin: 1.5em
     
     .nav-link
-        font-size: 1.5em
+        font-size: 2em
+        font-weight: normal
     
     .nav-icon
-        margin: 0 1em
-    
-    .menu-icon
-        right: 2.1vw // Match with body container padd
-        
-        &:before
-            margin-bottom: 0
-            transform: rotate(45deg) translateY(0.5 * $line-width)
-        &:after
-            margin-bottom: 0
-            transform: rotate(-45deg) translateY(-0.5 * $line-width)
+        display: inline-block
+        margin-right: 1em
 
 .menu-icon
-    position: absolute
+    position: fixed
     top: 1.5em
     right: 2.1vw
     color: blue

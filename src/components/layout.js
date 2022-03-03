@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import "./main.sass"
@@ -24,6 +24,8 @@ const Layout = ({ grid = false, children, contentStyle = null }) => {
     }
   `)
 
+  const [mobileMenuIsOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <>
       <div
@@ -32,8 +34,9 @@ const Layout = ({ grid = false, children, contentStyle = null }) => {
           maxWidth: 1920,
           padding: `0 2.1vw`,
         }}
+        className={ mobileMenuIsOpen ? 'no-scroll' : ''}
       >
-        <Nav />
+        <Nav setMobileMenuOpen={setMobileMenuOpen}/>
         
         <main className={ grid ? `grid-container` : `content-container` } style={contentStyle}>
           {children}
