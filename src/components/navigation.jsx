@@ -55,15 +55,15 @@ const Nav = () => {
                     <li>
                         <LinkWrap to="/contact" className={navStyles.navLink} activeClassName={navStyles.active}>Contact</LinkWrap>
                     </li>
-                    <li>
+                    <li className={navStyles.socials}>
                         <a className={`${navStyles.navIcon} ${navStyles.navLink}`} href="https://www.instagram.com/henrykramerpiano/">
-                            <FaInstagram />
+                            <FaInstagram /> Instagram
                         </a>
                         <a className={`${navStyles.navIcon} ${navStyles.navLink}`} href="https://www.facebook.com/henrykramerpiano/">
-                            <FaFacebookF />
+                            <FaFacebookF /> Facebook
                         </a>
                         <a className={`${navStyles.navIcon} ${navStyles.navLink}`} href="https://www.youtube.com/henrykramerpiano">
-                            <FaYoutube />
+                            <FaYoutube /> Twitter
                         </a>
                     </li>
                 </motion.ul>

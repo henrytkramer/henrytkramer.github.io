@@ -20,7 +20,7 @@ const About = () => (
             />
         </AniBlock>
         <Paragraph>
-            <h3>Henry Kramer</h3>
+            <h2>Henry Kramer</h2>
             <>
                 Praised by The Cleveland Classical Review for his “astonishingly confident technique” and The New York Times for “thrilling [and] triumphant” performances, pianist Henry Kramer is developing a reputation as a musician of rare sensitivity who combines stylish programming with insightful and exuberant interpretations.  In 2016, he garnered international recognition with a Second Prize win in the Queen Elisabeth Competition in Brussels. Most recently, he was awarded a 2019 Avery Fisher Career Grant by Lincoln Center – one of the most coveted honors bestowed on young American soloists.
             </>
