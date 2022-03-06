@@ -57,13 +57,13 @@ const Nav = () => {
                     </li>
                     <li className={navStyles.socials}>
                         <a className={`${navStyles.navIcon} ${navStyles.navLink}`} href="https://www.instagram.com/henrykramerpiano/">
-                            <FaInstagram /> Instagram
+                            <FaInstagram />
                         </a>
                         <a className={`${navStyles.navIcon} ${navStyles.navLink}`} href="https://www.facebook.com/henrykramerpiano/">
-                            <FaFacebookF /> Facebook
+                            <FaFacebookF />
                         </a>
                         <a className={`${navStyles.navIcon} ${navStyles.navLink}`} href="https://www.youtube.com/henrykramerpiano">
-                            <FaYoutube /> Twitter
+                            <FaYoutube />
                         </a>
                     </li>
                 </motion.ul>
