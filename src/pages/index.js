@@ -34,13 +34,13 @@ const IndexPage = ({data}) => (
     </div>
 
     <AniBlock>
-      <h2 className="index-heading">
+      <h2 className="index-block">
         <Link>Award-winning musician</Link> who combines stylish programming with insightful and exuberant interpretations.
       </h2>
     </AniBlock>
 
     <AniBlock>
-      <section>
+      <section className="index-block">
         <h2>Albums</h2>
         <div className="two-flex">
           <div>
@@ -62,7 +62,7 @@ const IndexPage = ({data}) => (
     </AniBlock>
 
     <AniBlock>
-      <section>
+      <section className="index-block">
         <h2>Videos</h2>
         <div className="two-flex">
           <div>

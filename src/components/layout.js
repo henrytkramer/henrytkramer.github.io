@@ -42,13 +42,13 @@ const Layout = ({ grid = false, children, contentStyle = null }) => {
           {children}
         </main>
         
-        <footer
+        {/*<footer
           style={{
             marginTop: `2rem`,
           }}
         >
           © {new Date().getFullYear()} Henry Kramer
-        </footer>
+        </footer>*/}
       </div>
     </>
   )
