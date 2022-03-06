@@ -22,7 +22,7 @@ const IndexPage = ({data}) => (
 
     <div style={ {fontSize: `10em`, lineHeight: 0.8, overflow: `hidden`} }>
       <AniText text="HENRY" />
-      <AniText text="KRAMER" delay={0.2}/>
+      <AniText text="KRAMER" delay={0.15}/>
     </div>
 
     <div className="hero">
@@ -46,7 +46,7 @@ const IndexPage = ({data}) => (
           <div>
             <StaticImage 
               src="../images/voyage_album.jpg"
-              alt="Voyage album cover"
+              alt="Voyage album cover, Henry Kramer and cellist Christine Lee standing back to back"
             />
           </div>
           <div>
@@ -65,7 +65,13 @@ const IndexPage = ({data}) => (
       <section>
         <h2>Videos</h2>
         <div className="two-flex">
-          <div></div> {/* Video preview */}
+          <div>
+            <StaticImage 
+              src="../images/video-preview.png"
+              alt="Henry standing in front of an orchestra"
+              style={{maxWidth: "30vw"}}
+            />
+          </div> {/* Video preview */}
           <div>
             <h3>Prokofiev Concerto No. 2—</h3>
             <p>Performed with the Belgian National Orchestra</p>

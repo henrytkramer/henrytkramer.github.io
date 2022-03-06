@@ -64,7 +64,8 @@ const DEFAULT_VARIANTS = {
         opacity: 1,
         transition: {
             delay: delay,
-            y: {type: "easeOut", duration: .8},
+            // y: {type:"ease", ease: "easeOut", duration: .5},
+            y: { type: "spring", stiffness: 50, bounce: 1, mass: 1.1, duration: 1},
             default: { duration: .8},
         }
     }),
