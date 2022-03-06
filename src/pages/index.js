@@ -20,7 +20,7 @@ const IndexPage = ({data}) => (
       <StaticImage src="../images/big-title.svg" alt="Henry Kramer"/>
     </div> */}
 
-    <div style={ {fontSize: `10em`, lineHeight: 0.8, overflow: `hidden`} }>
+    <div className='jumbo-text'>
       <AniText text="HENRY" />
       <AniText text="KRAMER" delay={0.15}/>
     </div>
@@ -86,7 +86,7 @@ const IndexPage = ({data}) => (
     <section>
       <div className="two-flex">
         <h2>Upcoming Performances</h2>
-        <Button link="/schedule">See all</Button>
+        <Button link="/schedule">See&nbsp;all</Button>
       </div>
       <EventsTable data={data} limit={3}/>
     </section>
