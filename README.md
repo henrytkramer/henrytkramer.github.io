@@ -7,3 +7,5 @@
 Events
 - Copy Google Cloud env/api keys into a new file called .env.development
 (Enable permissions in Google Cloud account)
+- Add events or make changes to events using this spreadsheet/form...
+- Restart gatsby instance when done
