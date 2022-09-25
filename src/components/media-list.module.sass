@@ -57,7 +57,7 @@
     @include mixins.mobile
         grid-column: 1 / -1
         grid-row: 3
-        height: 45vh
+        height: 30vh
 
 // Videos List
 .videos-list-title
@@ -81,7 +81,9 @@
     @include mixins.mobile
         grid-row: 5 / span 1
         grid-column: 1 / -1
-        overflow-y: hidden
+        overflow-y: scroll
+        max-height: 30vh
+        border: 1px solid #ddd
 
 .video-item
     padding: 1rem

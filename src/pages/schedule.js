@@ -48,6 +48,7 @@ export const query = graphql`
         start
         timestamp
         title
+        link
       }
     }
   }

@@ -1,9 +1,9 @@
 import React from "react"
 import * as eventStyles from "./events.module.sass"
 import { Link } from "gatsby"
-import Button from "./button.js"
 import { motion, AnimatePresence } from "framer-motion"
-
+import { HiOutlineExternalLink } from "react-icons/hi"
+import { HiOutlineLink } from "react-icons/hi"
 
 const EventItem = ({event, i}) => {
     return (
@@ -27,7 +27,9 @@ const EventItem = ({event, i}) => {
                     {event.description}
                 </div>
                 <div className={eventStyles.actions}>
-                    {event.link && <Button link={event.link}>Details</Button>}
+                    {event.link && <Link target="_blank" to={event.link} alt="Details">
+                        <HiOutlineExternalLink />
+                    </Link>}
                 </div>
             </div>
         </motion.div>
