@@ -54,5 +54,22 @@
     color: colors.$text-lighter
     font-size: 1.2rem
 
+    @include mixins.mobile
+        // grid-column: 5 / -1
+        justify-self: start
+        padding: 1em 0 0 0
+
+        a
+            text-decoration: none
+            display: inline-flex
+            align-items: center
+            gap: 0.3em 
+
+    .actions-text
+        display: none
+
+        @include mixins.mobile
+            display: inline
+
 .nowrap
     white-space: nowrap

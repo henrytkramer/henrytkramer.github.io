@@ -28,7 +28,7 @@ const EventItem = ({event, i}) => {
                 </div>
                 <div className={eventStyles.actions}>
                     {event.link && <Link target="_blank" to={event.link} alt="Details">
-                        <HiOutlineExternalLink />
+                        <span className={eventStyles.actionsText}>Event Details</span> <HiOutlineExternalLink />
                     </Link>}
                 </div>
             </div>
