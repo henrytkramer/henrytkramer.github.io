@@ -43,7 +43,23 @@ const IndexPage = ({data}) => (
       <section className="index-block">
         <h2>Albums</h2>
         <div className="two-flex">
+          <div className="album-cover">
+            <StaticImage 
+              src="../images/stellax_album.jpg"
+              alt="Schubert album cover, featuring Stella Chen"
+            />
+          </div>
           <div>
+            <h3>Stella x Schubert—</h3>
+            <p>An electric program of Schubert with violinist Stella Chen</p>
+            <div>
+              <Button primary target="_blank" link="https://open.spotify.com/album/5GwhiGQMc4CbJ0vCD8p06V?si=RmojoKfeQvGfZTuCyGMJeA">Spotify</Button>
+              <Button target="_blank" link="https://open.spotify.com/artist/4xdZ9fYujKkuzxnNBfm8KW?si=Hz6ZRG_1RCqAfNtCZYEoMg">See all albums</Button>
+            </div>
+          </div>
+        </div>
+        <div className="two-flex">
+          <div className="album-cover">
             <StaticImage 
               src="../images/voyage_album.jpg"
               alt="Voyage album cover, Henry Kramer and cellist Christine Lee standing back to back"
@@ -53,7 +69,7 @@ const IndexPage = ({data}) => (
             <h3>Voyage—</h3>
             <p>Taking you somewhere elegeic and temporal. A collaboration with cellist Christine Lee featuring works by Elliot Carter, Barber, and Ysaÿe.</p>
             <div>
-              <Button primary target="_blank" link="https://open.spotify.com/album/3j3gbtGL6ZVHhATLk91nVD?si=2TUjW6n_TOu-6ttE3UZb1g">Stream it on Spotify</Button>
+              <Button primary target="_blank" link="https://open.spotify.com/album/3j3gbtGL6ZVHhATLk91nVD?si=2TUjW6n_TOu-6ttE3UZb1g">Spotify</Button>
               <Button target="_blank" link="https://open.spotify.com/artist/4xdZ9fYujKkuzxnNBfm8KW?si=Hz6ZRG_1RCqAfNtCZYEoMg">See all albums</Button>
             </div>
           </div>
