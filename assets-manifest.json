@@ -18,8 +18,9 @@
   "commons.js": "commons-5f3a631ef56cb78bcf5d.js",
   "component---src-pages-404-js-e2f40ca507c7a79b737b.js.map": "component---src-pages-404-js-e2f40ca507c7a79b737b.js.map",
   "component---src-pages-404-js.js": "component---src-pages-404-js-e2f40ca507c7a79b737b.js",
+  "component---src-pages-about-js-2c73431be695463e800a.js.map": "component---src-pages-about-js-2c73431be695463e800a.js.map",
   "component---src-pages-about-js-2e1440c9db1bfb464722.js.map": "component---src-pages-about-js-2e1440c9db1bfb464722.js.map",
-  "component---src-pages-about-js.js": "component---src-pages-about-js-2e1440c9db1bfb464722.js",
+  "component---src-pages-about-js.js": "component---src-pages-about-js-2c73431be695463e800a.js",
   "component---src-pages-contact-js-a0bcc7e38c3ae02a1965.js.map": "component---src-pages-contact-js-a0bcc7e38c3ae02a1965.js.map",
   "component---src-pages-contact-js.js": "component---src-pages-contact-js-a0bcc7e38c3ae02a1965.js",
   "component---src-pages-index-js-0dc6d681183758f276d3.js.map": "component---src-pages-index-js-0dc6d681183758f276d3.js.map",
@@ -42,6 +43,7 @@
   "framework.js": "framework-6a525285796fb83f2864.js",
   "styles.css": "styles.8ef898e909d98dbef2be.css",
   "webpack-runtime-535e2d8f4c0ce37528d7.js.map": "webpack-runtime-535e2d8f4c0ce37528d7.js.map",
+  "webpack-runtime-71b2eb54865dde08301b.js.map": "webpack-runtime-71b2eb54865dde08301b.js.map",
   "webpack-runtime-83c88c85b25d9a802f0d.js.map": "webpack-runtime-83c88c85b25d9a802f0d.js.map",
-  "webpack-runtime.js": "webpack-runtime-83c88c85b25d9a802f0d.js"
+  "webpack-runtime.js": "webpack-runtime-71b2eb54865dde08301b.js"
 }
