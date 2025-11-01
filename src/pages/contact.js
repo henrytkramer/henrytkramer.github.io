@@ -15,6 +15,14 @@ const Contact = () => (
                 <li><a href="mailto:sarah@dininarts.com">sarah@dininarts.com</a></li>
             </ul>
         </div>
+        <p>For bookings</p>
+        <div>
+            <ul>
+                <li>Michael Fox</li>
+                <li>Bookings</li>
+                <li><a href="mailto:michael@efperformances.com">michael@efperformances.com</a></li>
+            </ul>
+        </div>
     </Layout>
 )
 
