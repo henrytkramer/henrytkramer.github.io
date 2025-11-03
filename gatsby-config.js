@@ -11,9 +11,9 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`, // manages changes to document head
-    `gatsby-plugin-gatsby-cloud`,
-    `gatsby-plugin-scroll-reveal`,
-    `gatsby-plugin-transition-link`,
+    // `gatsby-plugin-gatsby-cloud`, // deprecated
+    // `gatsby-plugin-scroll-reveal`, // removed; replaced with framer-motion
+    // `gatsby-plugin-transition-link`, // removed; replaced with framer-motion
     `gatsby-plugin-image`, // maintains multiple responsive image sizes, lazy load
     {
       resolve: `gatsby-source-filesystem`, // repeat this for each "data source"
